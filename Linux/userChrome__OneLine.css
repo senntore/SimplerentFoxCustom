@@ -8,18 +8,12 @@
  | |_ / _ \ \/ /                                    
  |  _| (_) >  <                                     
  |_|  \___/_/\_\                             
-
  No URL Bar Version
-
-
 */
 
 /* 
-
 V A R I A B L E S 
-
 Here you can change the opacity level and the main color of the browser. Also the color of the selections (When you select text)
-
 */
 
 :root {
@@ -68,7 +62,7 @@ T A B S
 #TabsToolbar {
     margin-top: -1px !important;
     margin-bottom: 1px !important;
-    margin-left: 25vw !important;
+    margin-right: 25vw !important; /*New Tab Position default left: 25vw & right undefined*/
     max-height: 32px !important;
 }
 
@@ -114,11 +108,8 @@ T A B S
 }
 
 /* 
-
 B U T T O N S 
-
 Here you can comment if you want your buttons to be showed up!
-
 */
 
 /* This one is the forward button  */
@@ -180,8 +171,9 @@ N A V B A R
     border-top-width: 0px !important;
     border-bottom-width: 0px !important;
     margin-top: -32px !important;
-    margin-bottom: -1px !important;
-    margin-right: 75vw !important;
+    margin-bottom: -1px !important; 
+  /*  margin-right: 75vw !important;*/
+    margin-left: 75vw !important; /*new*/
     height: 32px !important;
 }
 
@@ -302,7 +294,7 @@ U R L - B A R
 }
 
 #page-action-buttons {
-    display: none !important;
+    display: none !important; /*Pocket & bookmark button */
 }
 
 .urlbarView {
@@ -313,7 +305,6 @@ U R L - B A R
 /* 
 If you want to show the URLBar extended you must
 change this two blocks:
-
 In order to show it, you must change the value of "transparent" in the first block 
 and erease the second block. 
 */
