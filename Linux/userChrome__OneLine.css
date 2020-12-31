@@ -9,8 +9,7 @@
  |  _| (_) >  <                                     
  |_|  \___/_/\_\                             
 
- No URL Bar Version
-
+ One Line Version
 
 */
 
@@ -23,8 +22,8 @@ Here you can change the opacity level and the main color of the browser. Also th
 */
 
 :root {
-    --srf-color-primary: rgba(20, 20, 20, 0.6);
-    --srf-color-selection: #66a6d9;
+    --srf-color-primary: #574F4A;
+    --srf-color-selection: #574F4A; /*#66a6d9 */
 }
 
 /* 
@@ -49,7 +48,7 @@ window,
 ::selection {
     background-color: var(--srf-color-selection);
     /* Text color of your selection */
-    color: #141414;
+    color: #ffffff;
 }
 
 /* 
@@ -69,7 +68,13 @@ T A B S
     margin-top: -1px !important;
     margin-bottom: 1px !important;
     margin-left: 25vw !important;
-    max-height: 32px !important;
+    max-height: 32px !important
+}
+
+
+
+#TabsToolbar .toolbar-items {
+	margin-bottom: -1px !important;
 }
 
 .tab-background {
@@ -78,7 +83,7 @@ T A B S
 
 .tab-background[selected='true'] {
     -moz-appearance: none !important;
-    background-image: none !important;
+    background: transparent !important;
 }
 
 .tabbrowser-tabs {
@@ -109,9 +114,6 @@ T A B S
     min-height: 32px !important;
 }
 
-.titlebar-placeholder[type='pre-tabs'] {
-    display: none !important;
-}
 
 /* 
 
@@ -180,7 +182,7 @@ N A V B A R
     border-top-width: 0px !important;
     border-bottom-width: 0px !important;
     margin-top: -32px !important;
-    margin-bottom: -1px !important;
+    margin-bottom: 0px !important;
     margin-right: 75vw !important;
     height: 32px !important;
 }
@@ -198,13 +200,15 @@ S I D E - B A R
 #search-box {
     -moz-appearance: none !important;
     background: var(--srf-color-primary) !important;
-    border-radius: 6px !important;
+    border-radius: 0px !important;
 }
 
 #sidebar-icon {
-    display: none !important;
+    display: 0 !important;
+    opacity: 0% !important;
 }
 
+/*
 .sidebar-placesTree {
     color: var(--srf-color-selection) !important;
 }
@@ -212,6 +216,7 @@ S I D E - B A R
 #sidebar-switcher-target {
     color: var(--srf-color-selection) !important;
 }
+*/
 
 #sidebar-header {
     background: var(--srf-color-primary) !important;
@@ -244,7 +249,7 @@ U R L - B A R
 {
     #urlbar[breakout][breakout-extend] > #urlbar-background {
         animation-name: none !important;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05) !important;
+        box-shadow: none !important; /* 0 1px 4px rgba(0, 0, 0, 0.05) !important; */
     }
 }
 
@@ -272,6 +277,7 @@ U R L - B A R
 #urlbar-input-container {
     padding: 0 !important;
     height: 100% !important;
+    color: #000000 !important;
 }
 
 #identity-box {
@@ -285,6 +291,7 @@ U R L - B A R
 #searchbar {
     background: var(--bf-bg) !important;
     border: none !important;
+    
 }
 
 .searchbar-textbox {
@@ -299,10 +306,14 @@ U R L - B A R
 #urlbar {
     border: none !important;
     box-shadow: none !important;
+    /*opacity: 50% !important; /* newline to change opacity*/
 }
 
 #page-action-buttons {
-    display: none !important;
+    display: 0 !important; /* Pocket & Bookmarks*/
+    /*margin-left: -30px !important; /*hide pocket*/
+    margin-right: -60px !important;/*hide bookmark*/
+    opacity: 0% !important; /* newline to change opacity*/
 }
 
 .urlbarView {
@@ -321,12 +332,62 @@ and erease the second block.
 #urlbar-background {
     background: transparent !important;
     border: transparent !important;
+    box-shadow: none !important;
     animation: none !important;
 }
 
 #urlbar .urlbarView {
     display: none !important;
 }
+
+#urlbar-label-box, #urlbar-search-mode-indicator {
+    display: none !important;
+}
+
+/*New lines below*/
+/* Tabs bar height */
+#tabbrowser-tabs,
+#tabbrowser-tabs arrowscrollbox {
+	height: initial !important;
+	min-height: initial !important;
+}
+tab > stack {
+	height: 30px !important;
+	min-height: 30px !important;
+}
+/* Extra margin for the first and last tabs */
+.tabbrowser-tab[first-tab]:not([pinned=true]) {
+	margin-left: 8px !important;
+}
+.tabbrowser-tab[last-tab]:not([pinned=true]) {
+	margin-right: 8px !important;
+}
+
+#TabsToolbar .toolbar-items {
+	margin-bottom: -1px !important;
+}
+/* Center all inside tab */
+.tab-content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: -1px;
+	min-width: 100% !important;
+	padding: 0 10px !important;
+}
+
+
+/* Full width tabs */
+.tabbrowser-tab:not([style^="max-width"]):not([pinned]),
+.tabbrowser-tab[style^="max-width: 100px !important;"]:not([pinned]) {
+	max-width: 100% !important;
+}
+
+.tabbrowser-tab:not([style^="max-width"]):not([pinned]):not([fadein]),
+.tabbrowser-tab[style^="max-width: 100px !important;"]:not([pinned]):not([fadein]) {
+	max-width: .1px !important;
+}
+/*fullwidth tab from sweet theme https://github.com/EliverLara/firefox-sweet-theme*/
 
 /* 
 Designed and Coded by Miguel R. Ávila: https://github.com/MiguelRAvila
